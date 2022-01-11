@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>$Title$</title>
+</head>
+<body>
+<script>
+
+
+  const state = ['one','two'];
+  const payload = 'three'
+  // 别名 todo
+  const add = (state, { payload:todo }) => {
+    console.log(todo)
+    return state.concat(payload);
+  };
+  console.log(add(state,payload))
+
+//  结构数组
+  // const arr = ['one','two']
+  const arr = [{
+    name:'tom',age:12
+  },{
+    name:'cat',age:14
+  }
+  ]
+  const [arr1,arr2] = arr
+  console.log(arr1,arr2)
+
+</script>
+</body>
+</html>

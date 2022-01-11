@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 创建的类必须大写
+    class B {
+        constructor(x,y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+    // 创建的类必须使用new关键字调用
+    let b = new B();
+    // 实例对象的constructor方法指向类的原型的constructor方法
+    console.log(b.constructor===B.prototype.constructor);
+    // 类的原型上的constructor方法指向类本身
+    console.log(B===B.prototype.constructor);
+    // console.log(b.constructor)
+</script>
+</body>
+</html>

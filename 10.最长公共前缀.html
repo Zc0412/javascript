@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    const strs = ["flower","flow","flight"]
+
+    const n = strs.length;
+    let a = [] ;
+    for (let i = 0; i < n; i++) {
+        a.push(strs[i].length)
+    }
+    console.log(Math.min.apply(null,a))
+
+</script>
+
+</body>
+</html>

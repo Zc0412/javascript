@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100vw;
+            height: 100vh;
+            background-color: #2b669a;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button class="open">点击全屏</button>
+    <button class="close">关闭全屏</button>
+</div>
+<script>
+    let open = document.querySelector(".open")
+    let close = document.querySelector(".close")
+    let bodyNode = document.querySelector("body")
+    open.onclick = function (){
+        // console.log(bodyNode)
+        bodyNode.requestFullscreen()
+    }
+    close.onclick = function (){
+        console.log(1)
+        document.exitFullscreen()
+    }
+</script>
+</body>
+</html>

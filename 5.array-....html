@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+  let a = 'tom'
+  let b = 'cat'
+  let c = 'jerry'
+  let d = 'my'
+
+  const save = (...arr)=>{
+    console.log({arr})
+  }
+
+  save(a,b,c,d)
+
+
+
+  function foo(x, y, z) {
+    console.log(x,y,z)
+  }
+  const args = [1,2,3];
+
+  // 下面两句效果相同
+  foo.apply(null, args);
+  foo(...args);
+</script>
+
+
+</body>
+</html>

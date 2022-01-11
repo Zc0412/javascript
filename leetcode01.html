@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    ul{
+        display: flex;
+    }
+    li:before{
+        content: "\27a5";
+    }
+    li:first-child:before{
+        content: "";
+    }
+</style>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+    var b=null;
+    console.log(typeof b)
+    var reverse = function(x) {
+        let num = x.toString();
+        console.log(num)
+        let numArr = num.split('');
+        console.log(numArr)
+        if(numArr[0]!=='-'){
+            let reverseNum = Number(numArr.reverse().join(''))
+            return reverseNum;
+        }else if(numArr[0]==='-'){
+            numArr.splice(0,1)
+            let reverseNum = Number(numArr.reverse().join(''))
+            console.log(reverseNum)
+            return -reverseNum;
+        }
+
+    };
+    console.log(reverse(011))
+</script>
+</body>
+</html>

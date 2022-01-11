@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let str= [
+        {id:1,pay:'BANK',bank:'3121245612',name:'银行',chants:null},
+        {id:2,pay:'CMBEBANK',bank:'3453443612',name:'招行',chants:null},
+        {id:3,pay:'OFFLINE',bank:'3453545612',name:'线下',chants:null},
+        {id:4,pay:'ALIPAY',bank:'3455665612',name:'支付宝',chants:'458654808'},
+        {id:5,pay:'bank',bank:'3455665612',name:'银行',chants:'null'},
+    ]
+
+    const strName = str.map((data)=>(data.name)).reduce((pre,value,index,array)=>{
+        if (pre.indexOf(value)===-1){
+            pre.push(value);
+            console.log(index,array)
+        }
+        return pre
+    },[])
+    console.log(strName)
+
+    const classGradesData = [];
+    str &&
+    str.forEach(item => {
+        const children = [];
+        //这里是生成children的数据结构
+
+        console.log(item)
+        item.forEach(classListItem => {
+            children.push({
+                value: classListItem.pay,
+                label: classListItem.name,
+            });
+        });
+        const newClassData = {
+            value: item.pay,
+            label: item.name,
+            children,
+        };
+        return classGradesData.push(newClassData);
+    });
+    console.log(classGradesData)
+
+
+
+
+
+
+
+
+
+    // 数组去重
+    let arr = [1,2,2,2,2,3,3,3,4,4,4,4,5,6,7,8];
+
+    // pre: 上次调用回调是产生的值， 累计值  value:正在处理的元素  index:索引值  如何验证 打断点;
+    let result = arr.reduce((pre,value,index,array)=>{
+        if (pre.indexOf(value)===-1){
+            pre.push(value);
+            console.log(index,array)
+        }
+        return pre
+    },[])  // initialValue如果未定义值，则使用原数组第一个值。如果有定义值，pre就是定义的值initialValue，本题是[]
+    console.log(result)
+</script>
+</body>
+</html>

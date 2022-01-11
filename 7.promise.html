@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    fetch('https://randomuser.me/api/?results=5')
+        .then((res)=>res.results)
+        .then(
+            data => {
+                console.log(data)
+            }
+        )
+        .catch(err => ({err}));
+
+    // 返回一个新的promise
+    const delay = (timeout) => {
+        return new Promise(resolve => {
+            setTimeout(resolve, timeout);
+        });
+    };
+
+    delay(1000).then(_ => {
+        console.log('executed');
+    });
+</script>
+
+</body>
+</html>

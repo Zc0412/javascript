@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>/**
+ *思路
+
+ 通常情况下，罗马数字中小的数字在大的数字的右边。若输入的字符串满足该情况，那么可以将每个字符视作一个单独的值，累加每个字符对应的数值即可。
+
+ 例如 \texttt{XXVII}XXVII 可视作 \texttt{X}+\texttt{X}+\texttt{V}+\texttt{I}+\texttt{I}=10+10+5+1+1=27X+X+V+I+I=10+10+5+1+1=27。
+
+ 若存在小的数字在大的数字的左边的情况，根据规则需要减去小的数字。对于这种情况，我们也可以将每个字符视作一个单独的值，若一个数字右侧的数字比它大，则将该数字的符号取反。
+
+ 例如 \texttt{XIV}XIV 可视作 \texttt{X}-\texttt{I}+\texttt{V}=10-1+5=14X−I+V=10−1+5=14。
+ *
+ */
+
+
+
+let romanToInt = function (s) {
+        const symbolValues = new Map();
+        console.log(symbolValues)
+        symbolValues.set('I', 1);
+        symbolValues.set('V', 5);
+        symbolValues.set('X', 10);
+        symbolValues.set('L', 50);
+        symbolValues.set('C', 100);
+        symbolValues.set('D', 500);
+        symbolValues.set('M', 1000);
+        let ans = 0;
+        const n = s.length;
+        // console.log(n)
+        for (let i = 0; i < n; ++i) {
+            console.log(s[i])
+            // 获取得到每一位symbolValues的值
+            const value = symbolValues.get(s[i]);
+            console.log(value)
+            // 当前的i值小于字符串的长度 && 当前i的symbolValues值小于i+1的值 也就是左边i小于右边i的值 相减 反之 相加
+            if (i < n - 1 && value < symbolValues.get(s[i + 1])) {
+                ans -= value;
+            } else {
+                ans += value;
+            }
+        }
+        console.log(ans)
+        return ans;
+    };
+
+
+// var romanToInt = function(s) {
+//     // 定义了个对象 枚举了值
+//         var romanToIntMap = {
+//             'I': 1,
+//             'V': 5,
+//             'X': 10,
+//             'L': 50,
+//             'C': 100,
+//             'D': 500,
+//             'M': 1000,
+//         }
+//         // 转成数组
+//         var arr = s.split('')
+//         console.log(arr)
+//         var result = 0;
+//         for (var i = 0; i<= arr.length-1; i++) {
+//             if ( romanToIntMap[arr[i]] < romanToIntMap[arr[i+1]] ) {
+//                 result += romanToIntMap[arr[i+1]] - romanToIntMap[arr[i]]
+//                 i++;
+//             } else {
+//                 result += romanToIntMap[arr[i]]
+//             }
+//         }
+//         return result
+//     };
+
+
+const res = romanToInt("LVIII")
+console.log(res);
+
+</script>
+
+</body>
+</html>

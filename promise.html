@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Promise.resolve().then(() => {
+        console.log(0);
+        // console.log( Promise.resolve(4))
+        return Promise.resolve(4)
+    }).then((res) => {
+        console.log(res)
+    })
+
+    Promise.resolve().then(() => {
+        console.log(1);
+    }).then(() => {
+        console.log(2);
+    }).then(() => {
+        console.log(3);
+    }).then(() => {
+        console.log(5);
+    }).then(() =>{
+        console.log(6);
+    })
+
+
+
+    /*const promise1 = new Promise((resolve, reject) => reject())
+    const promise2 = promise1.then(
+        null,function () {
+            return 123;
+        }
+    ).then(
+        ()=>{
+            console.log('已完成')
+        },
+        ()=>{
+            console.log('已拒绝')
+        }
+    )*/
+    // let promise = new Promise(function(resolve, reject) {
+    //     console.log('Promise');
+    //     reject();
+    // });
+    //
+    // promise.then(function() {
+    //     console.log('resolved.');
+    // });
+    // console.log('Hi!');
+
+    // const promise = new Promise(function (resolve, reject) {
+    //     resolve('ok');
+    //     setTimeout(function () { throw new Error('test') }, 0)
+    // });
+    // promise.then(function (value) { console.log(value) }).catch(function (err) {
+    //     console.log(err)
+    // });
+
+</script>
+</body>
+</html>

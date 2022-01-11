@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var data = [];
+
+    for (var i = 0; i < 3; i++) {
+        data[i] = function () {
+            console.log(i);
+        };
+    }
+
+    data[0]();
+    data[1]();
+    data[2]();
+
+    /*var data = [];
+
+    for (var i = 0; i < 3; i++) {
+        data[i] = (function (i) {
+            return function(){
+                console.log(i);
+            }
+        })(i);
+    }
+
+    data[0]();
+    data[1]();
+    data[2]();*/
+
+</script>
+</body>
+</html>
