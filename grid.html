@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>grid</title>
+  <style>
+      body {
+          margin: 0;
+          padding: 0;
+      }
+
+      #page {
+          display: grid; /* 1.设置display为grid */
+          width: 100%;
+          height: 250px;
+          grid-template-areas: "head head"
+                       "nav  main"
+                       "nav  foot"; /* 2.区域划分 当前为 三行 两列 */
+          grid-template-rows: 50px 1fr 30px; /* 3.各区域 宽高设置 */
+          grid-template-columns: 150px 1fr;
+      }
+
+      #page > header {
+          grid-area: head; /* 4. 指定当前元素所在的区域位置, 从grid-template-areas选取值 */
+          background-color: #8ca0ff;
+      }
+
+      #page > nav {
+          grid-area: nav;
+          background-color: #ffa08c;
+      }
+
+      #page > main {
+          grid-area: main;
+          background-color: #ffff64;
+      }
+
+      #page > footer {
+          grid-area: foot;
+          background-color: #8cffa0;
+      }
+
+      .box {
+          display: grid;
+          /*grid-template-columns: 100px 100px 100px;*/
+          /*grid-template-rows: 100px 100px 100px;*/
+          grid-template-columns: repeat(3, 100px); /* 重复写同样的值非常麻烦，尤其网格很多时。这时，可以使用repeat()函数，简化重复的值*/
+          grid-template-rows: repeat(4, 100px); /* repeat 接受两个参数 第一个是重复的次数 第二个是重复的值 */
+
+      }
+
+      .box1 {
+          background-color: red;
+      }
+
+      .box2 {
+          background-color: #a66948;
+      }
+
+      .box3 {
+          background-color: #a2a13e;
+      }
+
+      .box4 {
+          background-color: #598a38;
+      }
+
+      .box5 {
+          background-color: #00ff77;
+      }
+
+      .box6 {
+          background-color: #00fff7;
+      }
+
+      .box7 {
+          background-color: #2200ff;
+      }
+
+      .box8 {
+          background-color: #bf00ff;
+      }
+
+      .box9 {
+          background-color: #ff00ae;
+      }
+  </style>
+</head>
+<body>
+<section id="page">
+  <header>Header</header>
+  <nav>Navigation</nav>
+  <main>Main area</main>
+  <footer>Footer</footer>
+</section>
+
+<div class="box">
+  <div class="box1">1</div>
+  <div class="box2">2</div>
+  <div class="box3">3</div>
+  <div class="box4">4</div>
+  <div class="box5">5</div>
+  <div class="box6">6</div>
+  <div class="box7">7</div>
+  <div class="box8">8</div>
+  <div class="box9">9</div>
+</div>
+
+</body>
+</html>

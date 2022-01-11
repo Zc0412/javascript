@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 打断点，刷新页面
+    let arr = [1, 2, 3, 4, 5];
+    let res = arr.reduce((val, item, index) => {
+        return val + item * index
+    },10);
+    console.log(res)
+
+    let myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
+    let myOrderedArray = myArray.reduce(function (accumulator, currentValue) {
+        if (accumulator.indexOf(currentValue) === -1) {
+            accumulator.push(currentValue)
+        }
+        return accumulator
+    }, [])
+
+    console.log(myOrderedArray)
+</script>
+</body>
+</html>
